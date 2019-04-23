@@ -15,6 +15,7 @@ public class Drone extends Veiculo{
 	@Override
 	public double CustoFrete(int latitudeOrigem, int longitudeOrigem, int latitudeDestino, int longitudeDestino,
 			int pesoCarga) {
+		pesoCarga = pesoCarga <= 0 ? 1 : pesoCarga;
 		double diferencaLatitude = Math.abs(latitude - latitudeOrigem);
 		double diferencaLongitude = Math.abs(longitude - longitudeOrigem);
 		diferencaLatitude += Math.abs(latitudeOrigem - latitudeDestino);

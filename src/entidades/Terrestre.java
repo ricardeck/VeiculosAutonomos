@@ -7,7 +7,7 @@ public class Terrestre extends Veiculo{
 	@Override
 	public double CustoFrete(int latitudeOrigem, int longitudeOrigem, int latitudeDestino, int longitudeDestino,
 			int pesoCarga) {
-		
+		pesoCarga = pesoCarga <= 0 ? 1 : pesoCarga;
 		double distancia = Math.abs(latitude - latitudeOrigem);
 		distancia += Math.abs(longitude - longitudeOrigem);
 		distancia += Math.abs(latitudeOrigem - latitudeDestino);
