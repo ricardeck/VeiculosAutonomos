@@ -35,7 +35,7 @@ public class Testes {
 //		
 //		System.out.println("Testando findByMatricula");
 //		VeiculoDAOIF veiculoDao = DaoFactory.createVeiculoDao();
-//		System.out.println(veiculoDao.findByMatricula(20).toString());
+//		System.out.println(veiculoDao.findByMatricula(2).toString());
 //
 //		
 //		
@@ -43,7 +43,7 @@ public class Testes {
 //		ArrayList<Veiculo> veiculos = new ArrayList<Veiculo>();
 //		Scanner sc = new Scanner(System.in);
 //		VeiculoDAOIF veiculoDao = DaoFactory.createVeiculoDao();
-//		veiculos = veiculoDao.findByCapacidade(18);
+//		veiculos = veiculoDao.findByCapacidade(13);
 //		for (Veiculo v : veiculos) {
 //			System.out.println(v.toString() +" - " + v.CustoFrete(8, 6, 10, 10, 6) + " - " + v.getClass().toString());
 //		}

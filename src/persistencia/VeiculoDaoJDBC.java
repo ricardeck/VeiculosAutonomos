@@ -24,12 +24,28 @@ public class VeiculoDaoJDBC implements VeiculoDAOIF {
 		VeiculoDaoJDBC.conn = VeiculoDaoJDBC.getConnection();
 	}
 	
+//	public static Connection getConnection() {
+//		if (conn == null) {
+//			try {
+//				Properties props = loadProperties();
+//				String url = props.getProperty("dburl");
+//				conn = DriverManager.getConnection(url, props);
+//			}
+//			catch (SQLException e) {
+//				throw new DbException(e.getMessage());
+//			}
+//		}
+//		return conn;
+//	}
+	
 	public static Connection getConnection() {
 		if (conn == null) {
 			try {
+				
 				Properties props = loadProperties();
 				String url = props.getProperty("dburl");
 				conn = DriverManager.getConnection(url, props);
+//				conn = DriverManager.getConnection(url, user,password);
 			}
 			catch (SQLException e) {
 				throw new DbException(e.getMessage());
@@ -189,7 +205,7 @@ public class VeiculoDaoJDBC implements VeiculoDAOIF {
 		ResultSet rs = null;
 		try {
 			st = conn.prepareStatement(
-				"SELECT * FROM veiculo WHERE matricula >=" + matricula);
+				"SELECT * FROM veiculo WHERE matricula =" + matricula);
 			rs = st.executeQuery();
 
 			Veiculo veiculo = null;
