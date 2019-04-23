@@ -3,34 +3,25 @@ package ui;
 import entidades.Veiculo;
 import persistencia.DaoFactory;
 import persistencia.VeiculoDAOIF;
-
 import sessao.AppFrete;
 import sessao.AppFreteIF;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import javax.swing.JButton;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-
 import java.io.IOException;
 
-
 public class Buscar extends JFrame{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtLatOrigem;
@@ -145,7 +136,6 @@ public class Buscar extends JFrame{
 							!app.ehInteiro(txtLatDestino.getText()) || !app.ehInteiro(textLongDestino.getText())||
 							!app.ehInteiro(textPesoCarga.getText())) {
 							JOptionPane.showMessageDialog(null, "Somente Numeros Inteiros");
-//							throws new IntegerException();
 					}else {
 							veiculo = app.melhorFrete(Integer.parseInt(txtLatOrigem.getText()),
 													  Integer.parseInt(textLongOrigem.getText()),
@@ -156,8 +146,7 @@ public class Buscar extends JFrame{
 							if(veiculo==null) {
 								JOptionPane.showMessageDialog(null, "Não foi encontrado Veiculo com capacidade para esta carga");
 								dispose();
-							}
-							else {
+							}else {
 								
 							
 							custo = veiculo.CustoFrete(Integer.parseInt(txtLatOrigem.getText()),
@@ -179,8 +168,6 @@ public class Buscar extends JFrame{
 					       txtLatDestino.setText(" ");
 					       textLongDestino.setText(" ");
 					       textPesoCarga.setText(" ");
-//					       Thread.currentThread().sleep(3000);
-					       
 					       dispose();
 					}
 				} catch (Exception e2) {

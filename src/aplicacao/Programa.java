@@ -10,7 +10,6 @@ public class Programa {
 //		VeiculosAutonomosUIIF ui = (VeiculosAutonomosUIIF) new Console();
 		VeiculosAutonomosUIIF ui = (VeiculosAutonomosUIIF) new Menu();
 		ui.exibir();
-
 	}
 	
 	public static void main(String[] args) throws Exception {

@@ -23,13 +23,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 public class Menu extends JFrame implements VeiculosAutonomosUIIF{
-
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -49,24 +45,21 @@ public class Menu extends JFrame implements VeiculosAutonomosUIIF{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 539, 476);
 		
-		//adiciona itens no menu
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		JMenu arquivo = new JMenu("Arquivo");
+		JMenu arquivo = new JMenu("Ve\u00EDculo");
 		JMenu editar = new JMenu("Editar");
 		JMenu exibir = new JMenu("Exibir");
 	    menuBar.add(arquivo);	
 	    menuBar.add(editar);
 	    menuBar.add(exibir);
-	    
-	    //adiciona subitens no menu
-	    JMenuItem inserirAcao = new JMenuItem("Inserir");
+
+	    JMenuItem inserirAcao = new JMenuItem("Inserir veiculo");
         JMenuItem buscarAcao = new JMenuItem("Buscar veiculo");
         JMenuItem sairAcao = new JMenuItem("Sair");
-        JMenuItem atualizarAcao = new JMenuItem("Atualizar");
+        JMenuItem atualizarAcao = new JMenuItem("Atualizar veiculo");
         JMenuItem exibirAcao = new JMenuItem("Exibir veiculos");
-		
-        //agrupa a cada item correspondente
+
         arquivo.add(inserirAcao);
         arquivo.add(buscarAcao);
         arquivo.addSeparator();
@@ -251,14 +244,5 @@ public class Menu extends JFrame implements VeiculosAutonomosUIIF{
 	@Override
 	public void exibir() throws Exception {
 		Menu.main(null);
-		
 	}
-
-	@Override
-	public void MensagemDeErro(String msg) {
-		
-		
-	}		
-
-
 }

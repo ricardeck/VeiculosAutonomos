@@ -86,7 +86,6 @@ public class AppFrete implements AppFreteIF{
 					veiculo.setLongitude(longitude);
 	
 			this.veiculoDao.update(veiculo);
-			
 	}
 		
 }

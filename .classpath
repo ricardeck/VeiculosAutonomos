@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Loureiro/Documents/Java/VeiculosAutonomos/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="D:/VeiculosAutonomos/lib/hsqldb.jar" sourcepath="lib/hsqldb.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

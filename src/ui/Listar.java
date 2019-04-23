@@ -2,7 +2,6 @@ package ui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,29 +9,17 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JList;
 import javax.swing.JScrollBar;
 import entidades.Veiculo;
-
 import java.util.ArrayList;
-
 import persistencia.DaoFactory;
 import persistencia.VeiculoDAOIF;
-
-import sessao.AppFrete;
-import sessao.AppFreteIF;
 
 
 public class Listar extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private VeiculoDAOIF veiculoDao = DaoFactory.createVeiculoDao();
-	private AppFreteIF app = new AppFrete(veiculoDao);
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,10 +33,6 @@ public class Listar extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 * @throws Exception 
-	 */
 	public Listar() throws Exception {
 		setTitle("Ve\u00EDculos Cadastrados");
 		setBounds(100, 100, 591, 553);
@@ -70,10 +53,5 @@ public class Listar extends JFrame {
 		for (Veiculo o : obj) 
 			model.addElement(o);
 		 list.setModel(model);
-			
-	
-			
-	
 	}
-
 }

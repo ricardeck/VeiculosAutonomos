@@ -10,33 +10,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
-
 import Exceção.DbException;
 import entidades.Drone;
 import entidades.Terrestre;
 import entidades.Veiculo;
 
 public class VeiculoDaoJDBC implements VeiculoDAOIF {
-
 	private static Connection conn = null ;
 	
 	public VeiculoDaoJDBC() {
 		VeiculoDaoJDBC.conn = VeiculoDaoJDBC.getConnection();
 	}
-	
-//	public static Connection getConnection() {
-//		if (conn == null) {
-//			try {
-//				Properties props = loadProperties();
-//				String url = props.getProperty("dburl");
-//				conn = DriverManager.getConnection(url, props);
-//			}
-//			catch (SQLException e) {
-//				throw new DbException(e.getMessage());
-//			}
-//		}
-//		return conn;
-//	}
 	
 	public static Connection getConnection() {
 		if (conn == null) {
@@ -45,7 +29,6 @@ public class VeiculoDaoJDBC implements VeiculoDAOIF {
 				Properties props = loadProperties();
 				String url = props.getProperty("dburl");
 				conn = DriverManager.getConnection(url, props);
-//				conn = DriverManager.getConnection(url, user,password);
 			}
 			catch (SQLException e) {
 				throw new DbException(e.getMessage());
@@ -95,7 +78,6 @@ public class VeiculoDaoJDBC implements VeiculoDAOIF {
 		}
 	}
 
-
 	@Override
 	public ArrayList<Veiculo> findAll() {
 		PreparedStatement st = null;
@@ -125,7 +107,6 @@ public class VeiculoDaoJDBC implements VeiculoDAOIF {
 			VeiculoDaoJDBC.closeResultSet(rs);
 		}
 	}
-	
 	
 	@Override
 	public void insert(Veiculo obj) {

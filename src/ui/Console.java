@@ -20,12 +20,6 @@ public class Console implements VeiculosAutonomosUIIF{
 		this.br = new  BufferedReader(new
 				InputStreamReader(System.in));
 	}
-	
-	public void MensagemDeErro(String msg) {
-		System.out.println(msg);
-		menu();
-	}
-	
 	@Override
 	public void exibir() throws Exception {
 		int option;
@@ -73,7 +67,6 @@ public class Console implements VeiculosAutonomosUIIF{
 			app.setLocalizacao(veiculo.getMatricula(), latitudeDestino, longitudeDestino);
 		}
 	}
-	
 	private void addVeiculo() throws Exception {
 		int capacidade;
 		int latitude;

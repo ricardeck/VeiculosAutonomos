@@ -30,9 +30,7 @@ import javax.swing.border.EtchedBorder;
 import java.io.IOException;
 
 public class Inserir extends JFrame{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtLatitude;
@@ -136,9 +134,6 @@ public class Inserir extends JFrame{
 					}else if (!rdbtnAuto.isSelected() && !rdbtnDrone.isSelected()) {
 							JOptionPane.showMessageDialog(null, "Selecione uma opcao");
 					}
-//					else if(app.posicaoExiste(Integer.parseInt(txtLatitude.getText()), Integer.parseInt(textLongitude.getText()))) {
-//						    JOptionPane.showMessageDialog(null, "A posicao que tenta inserir já existe");
-//					}
 					else if(!app.ehInteiro(txtLatitude.getText()) || !app.ehInteiro(textLongitude.getText())|| 
 							!app.ehInteiro(textPesoCarga.getText())) {
 							JOptionPane.showMessageDialog(null, "Somente numeros inteiros e positivos");
@@ -149,24 +144,9 @@ public class Inserir extends JFrame{
 							JOptionPane.showMessageDialog(null,"Veiculo cadastrado com sucesso");
 							dispose();
 					}
-					
-				} catch (Exception e2) {
+				}catch (Exception e2) {
 					e2.printStackTrace();
 				}
-//				    txtLatitude.setText("");
-//			        textLongitude.setText("");
-//			        textPesoCarga.setText("");
-//			        rdbtnAuto.setSelected(false);
-//			        rdbtnDrone.setSelected(false);
-			        
-//			        Thread.currentThread();
-//					try {
-//						Thread.sleep(3000);
-//					} catch (InterruptedException e1) {
-//						e1.printStackTrace();
-//					}
-			        
-//			        dispose();
 			}
 		});
 	}

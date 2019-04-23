@@ -20,7 +20,6 @@ public class Drone extends Veiculo{
 		double diferencaLongitude = Math.abs(longitude - longitudeOrigem);
 		diferencaLatitude += Math.abs(latitudeOrigem - latitudeDestino);
 		diferencaLongitude += Math.abs(longitudeOrigem - longitudeDestino);
-		
 		double custo = Math.sqrt(Math.pow(diferencaLatitude,2) + Math.pow(diferencaLongitude,2));
 		custo *= pesoCarga*PrecoKM;
 		custo = custo<ValorMinimo ? ValorMinimo : custo;
